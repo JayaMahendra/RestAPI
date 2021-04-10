@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:rest_api_jaya/service/http_service.dart';
+import 'package:flutter/cupertino.dart';
 
 class MovieList extends StatefulWidget {
   @override
@@ -10,12 +11,12 @@ class _MovieListState extends State<MovieList> {
   String result = "";
   HttpService service;
 
+  @override
   void initState() {
     service = HttpService();
     super.initState();
   }
 
-  @override
   Widget build(BuildContext context) {
     service.getPopularMovies().then((value) => {
           setState(() {
