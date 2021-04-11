@@ -25,6 +25,8 @@ class _MovieListState extends State<MovieList> {
     });
   }
 
+  String imgPath = 'https://image.tmdb.org/t/p/w500';
+
   @override
   void initState() {
     service = HttpService();
@@ -49,6 +51,15 @@ class _MovieListState extends State<MovieList> {
               color: Colors.white,
               elevation: 2.0,
               child: ListTile(
+                leading: SizedBox(
+                  width: 100,
+                  child: ClipRRect(
+                    child: Image.network(imgPath + movies[position].posterPath),
+                  ),
+                ),
+                //  CircleAvatar(
+                //     child: ClipRRect(
+                //         child: Image.network(movies[position].posterPath))),
                 title: Text(movies[position].title),
                 subtitle: Text(
                   'Rating = ' + movies[position].voteAverage.toString(),
