@@ -12,6 +12,6 @@ class Movie {
     this.title = parsedJson['title'];
     this.voteAverage = parsedJson['vote_average'] * 1.0;
     this.overview = parsedJson['overview'];
-    this.posterPath = parsedJson['posterPath'];
+    this.posterPath = parsedJson['poster_path'];
   }
 }
